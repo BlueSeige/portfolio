@@ -36,19 +36,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const delta = scrollTop - lastScrollTop;
 
-    // Move blobs
+    // ---- Heavy parallax for blobs ----
     blobs.forEach((blob, i) => {
-      const speed = 0.15 + i * 0.05;
-      const currentTop = parseFloat(blob.style.top) || blob.offsetTop;
-      blob.style.transform = `translateY(${scrollTop * speed}px)`;
+      const speed = 0.25 + i * 0.1; // faster movement for deeper effect
+      const currentY = parseFloat(blob.dataset.offset || blob.offsetTop);
+      blob.style.transform = `translateY(${currentY + scrollTop * speed}px)`;
     });
 
-    // Move floating shapes in opposite directions for depth
+    // ---- Heavy parallax for floating shapes ----
     shapes.forEach((shape, i) => {
-      const speed = 0.1 + i * 0.03;
-      shape.style.transform = `translateY(${-scrollTop * speed}px) rotate(${scrollTop * (0.05 + i * 0.02)}deg)`;
+      const speedY = 0.15 + i * 0.05; // vertical speed
+      const speedRot = 0.08 + i * 0.02; // rotation speed
+      const baseY = parseFloat(shape.dataset.offset || shape.offsetTop);
+
+      // Smooth easing
+      shape.style.transform = `translateY(${
+        baseY - scrollTop * speedY
+      }px) rotate(${scrollTop * speedRot}deg)`;
     });
 
     lastScrollTop = scrollTop;
   });
+
+  // Initialize data-offset for smooth relative movement
+  blobs.forEach((b) => b.setAttribute("data-offset", b.offsetTop));
+  shapes.forEach((s) => s.setAttribute("data-offset", s.offsetTop));
 });

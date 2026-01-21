@@ -101,12 +101,12 @@
 
 .animated-bg span {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
   background: rgba(30,144,255,0.15);
-  filter: blur(80px); /* slightly less blur so shapes pop more */
+  filter: blur(90px); /* slightly less blur so shapes pop more */
   animation: float 18s infinite linear;
-  opacity: 0.25; /* was 0.15 */
+  opacity: 0.3; /* was 0.15 */
 }
 
 .animated-bg span:nth-child(1) {
@@ -148,12 +148,15 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
+    opacity: 0.35; /* more visible */
+    transition: transform 0.1s linear; /* smoother on scroll */
 }
 
 .shape {
   position: absolute;
-  opacity: 0.25; /* more visible */
+  opacity: 0.35; /* more visible */
   animation: drift 25s infinite linear;
+    transition: transform 0.1s linear; /* smoother on scroll */
 }
 
 .square {
@@ -227,4 +230,12 @@
   transition-delay: 0.6s;
 }
 
-/* Or use JS to assign delay dynamically if you want */
+
+/* Optional: add Z-depth layering */
+.animated-bg span:nth-child(1) { z-index: -3; }
+.animated-bg span:nth-child(2) { z-index: -2; }
+.animated-bg span:nth-child(3) { z-index: -1; }
+
+.floating-shapes .square { z-index: -2; }
+.floating-shapes .circle { z-index: -1; }
+.floating-shapes .triangle { z-index: -3; }
