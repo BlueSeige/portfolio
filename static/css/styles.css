@@ -1,0 +1,205 @@
+.section {
+  padding: 6rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.bg-alt {
+  background: rgba(255,255,255,0.02);
+}
+
+.section-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section-text {
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  text-align: center;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+/* Cards */
+.info-card,
+.project-card,
+.skill-card,
+.stack-card {
+  background: rgba(30,144,255,0.08);
+  border: 1px solid rgba(30,144,255,0.25);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: all 0.35s ease;
+}
+
+.info-card:hover,
+.project-card:hover,
+.skill-card:hover,
+.stack-card:hover {
+  transform: translateY(-8px);
+  background: rgba(30,144,255,0.18);
+}
+
+/* Project links */
+.project-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #7db4ff;
+  font-weight: 500;
+}
+
+/* CTA */
+.cta-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  background: #1e90ff;
+  color: #fff;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Fade animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.9s ease;
+}
+
+
+/* BACKGROUND ANIMATION */
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.animated-bg span {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(30,144,255,0.15);
+  filter: blur(80px); /* slightly less blur so shapes pop more */
+  animation: float 18s infinite linear;
+  opacity: 0.25; /* was 0.15 */
+}
+
+.animated-bg span:nth-child(1) {
+  top: 10%;
+  left: 10%;
+}
+
+.animated-bg span:nth-child(2) {
+  top: 50%;
+  left: 70%;
+  animation-duration: 22s;
+}
+
+.animated-bg span:nth-child(3) {
+  top: 80%;
+  left: 30%;
+  animation-duration: 26s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) }
+  50% { transform: translateY(-120px) }
+  100% { transform: translateY(0) }
+}
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #1e90ff, #7db4ff);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+.floating-shapes {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.25; /* more visible */
+  animation: drift 25s infinite linear;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #1e90ff;
+  top: 20%;
+  left: 15%;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px dashed #7db4ff;
+  top: 60%;
+  left: 70%;
+  animation-duration: 30s;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 90px solid rgba(30,144,255,0.3);
+  top: 80%;
+  left: 30%;
+  animation-duration: 35s;
+}
+
+@keyframes drift {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-200px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+.code-ambient {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  width: 320px;
+  font-size: 0.75rem;
+  color: #7db4ff;
+  opacity: 0.12;
+  z-index: -1;
+  animation: codeFloat 20s infinite ease-in-out;
+}
+
+.code-ambient pre {
+  background: transparent;
+  font-family: monospace;
+  line-height: 1.6;
+}
+
+@keyframes codeFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-80px); }
+  100% { transform: translateY(0); }
+}

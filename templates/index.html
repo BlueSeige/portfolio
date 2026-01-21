@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- BACKGROUND ANIMATED BLOBS -->
+<div class="animated-bg">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- FLOATING SHAPES -->
+<div class="floating-shapes">
+  <div class="shape square"></div>
+  <div class="shape circle"></div>
+  <div class="shape triangle"></div>
+</div>
+
+<!-- HERO -->
+<section class="relative min-h-screen flex flex-col justify-center items-center px-6 text-center">
+  <img src="{{ url_for('static', filename='images/john.png') }}"
+       class="w-36 h-36 md:w-48 md:h-48 rounded-full border-4 border-primary mb-6 fade-in"/>
+
+  <h1 class="font-sora text-4xl md:text-6xl font-bold fade-in">
+    Onubogu John
+  </h1>
+
+  <p class="text-primary text-lg md:text-xl mt-3 fade-in delay-1">
+    UI/UX Designer • Full-Stack Developer • Mobile App Engineer
+  </p>
+
+  <p class="max-w-3xl mt-6 text-gray-300 leading-relaxed fade-in delay-2">
+    I design, build, and scale digital experiences — from intuitive interfaces
+    to complete web and mobile systems. I combine clean design thinking with
+    solid engineering to solve real-world problems and ship scalable products.
+  </p>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <h2 class="section-title">About Me</h2>
+  <p class="section-text">
+    I’m a versatile developer and designer with years of experience crafting
+    visually compelling, user-centered, and technically sound digital products.
+    My strength lies in bridging the gap between design and engineering —
+    ensuring that products don’t just look good, but work beautifully.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-8 mt-10">
+    <div class="info-card">
+      <h3>Design Philosophy</h3>
+      <p>
+        I focus on clarity, hierarchy, accessibility, and emotional resonance.
+        Every interface is intentional — from typography to spacing to motion.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>Engineering Approach</h3>
+      <p>
+        I build maintainable, scalable systems using clean architecture,
+        efficient APIs, and modern development practices.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section bg-alt">
+  <h2 class="section-title">Skills & Expertise</h2>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+    <div class="skill-card">Programming Languages</div>
+    <div class="skill-card">Front-End Frameworks</div>
+    <div class="skill-card">Responsive Design</div>
+    <div class="skill-card">UI Design Principles</div>
+    <div class="skill-card">Usability Testing</div>
+    <div class="skill-card">Cross-Platform Design</div>
+    <div class="skill-card">Branding & Identity</div>
+    <div class="skill-card">Typography</div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="section">
+  <h2 class="section-title">Tech Stack</h2>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+  <div class="stack-card flex items-center gap-2">
+    <img src="{{ url_for('static', filename='images/python-icon.png') }}" class="w-6 h-6" />
+    Python
+  </div>
+  <div class="stack-card flex items-center gap-2">
+    <img src="{{ url_for('static', filename='images/django-icon.png') }}" class="w-6 h-6" />
+    Django
+  </div>
+  <div class="stack-card flex items-center gap-2">
+    <img src="{{ url_for('static', filename='images/nodejs-icon.png') }}" class="w-6 h-6" />
+    Node.js
+  </div>
+  <div class="stack-card flex items-center gap-2">
+    <img src="{{ url_for('static', filename='images/express-icon.png') }}" class="w-6 h-6" />
+    Express
+  </div>
+  <div class="stack-card flex items-center gap-2">
+    <img src="{{ url_for('static', filename='images/flutter-icon.png') }}" class="w-6 h-6" />
+    Flutter
+  </div>
+  <div class="stack-card flex items-center gap-2">
+    <img src="{{ url_for('static', filename='images/kotlin-icon.png') }}" class="w-6 h-6" />
+    Kotlin
+  </div>
+  <div class="stack-card flex items-center gap-2">
+    <img src="{{ url_for('static', filename='images/typescript-icon.png') }}" class="w-6 h-6" />
+    TypeScript
+  </div>
+  <div class="stack-card flex items-center gap-2">
+    <img src="{{ url_for('static', filename='images/postgresql-icon.png') }}" class="w-6 h-6" />
+    PostgreSQL
+  </div>
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+<section class="section bg-alt">
+  <h2 class="section-title">Selected Projects</h2>
+
+  <div class="grid md:grid-cols-2 gap-8 mt-10">
+    <div class="project-card">
+      <h3>QR Code Exam Card System</h3>
+      <p>
+        Secure student verification system using QR codes to instantly retrieve
+        student data and registered courses during examinations.
+      </p>
+      <a href="https://github.com/yourusername/Qr-Code-Exam-Card-System" target="_blank">
+        View Repository →
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>Bus Booking System</h3>
+      <p>
+        A Python-based booking system that allows staff to reserve bus seats
+        efficiently with structured backend logic.
+      </p>
+      <a href="https://github.com/yourusername/bus-booking-system" target="_blank">
+        View Repository →
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>Recipe Discovery App</h3>
+      <p>
+        A modern TypeScript application that helps users discover recipes based
+        on preferences and available ingredients.
+      </p>
+      <a href="https://github.com/yourusername/Recipe-Discovery-App" target="_blank">
+        View Repository →
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>Student Result Management System</h3>
+      <p>
+        CSV-based result upload system allowing lecturers to upload grades while
+        students securely view only their own results.
+      </p>
+      <a href="https://github.com/yourusername/Student-Result-Upload-and-Checking-Web-App" target="_blank">
+        View Repository →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section text-center">
+  <h2 class="section-title">Let’s Work Together</h2>
+  <p class="section-text">
+    Have a project in mind or want to collaborate?
+    Let’s build something meaningful.
+  </p>
+
+  <a href="mailto:onubogujohn18@gmail.com" class="cta-btn">
+    Get in Touch
+  </a>
+</section>
+
+<!-- AMBIENT CODE -->
+<div class="code-ambient">
+<pre><code>
+def build_product(idea):
+    design = ui_ux(idea)
+    backend = api_logic(design)
+    frontend = interface(design)
+    return launch(frontend, backend)
+
+while True:
+    build_product("real-world problem")
+</code></pre>
+</div>
+
+
+<footer class="py-10 text-center text-gray-400 text-sm">
+  © 2026 Onubogu John — Design × Engineering
+</footer>
+
+{% endblock %}
