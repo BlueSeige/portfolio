@@ -68,16 +68,27 @@
 }
 
 /* Fade animation */
-.fade-in {
+.fade-in,
+.info-card,
+.project-card,
+.skill-card,
+.stack-card,
+.cta-btn {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
 }
 
-.fade-in.show {
+.fade-in.show,
+.info-card.show,
+.project-card.show,
+.skill-card.show,
+.stack-card.show,
+.cta-btn.show {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.9s ease;
 }
+
 
 
 /* BACKGROUND ANIMATION */
@@ -203,3 +214,17 @@
   50% { transform: translateY(-80px); }
   100% { transform: translateY(0); }
 }
+
+.section .fade-in {
+  transition-delay: 0.2s;
+}
+
+.section .fade-in:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.section .fade-in:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+/* Or use JS to assign delay dynamically if you want */
